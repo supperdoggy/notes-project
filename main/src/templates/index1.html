@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes app</title>
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/bg.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/scripts/bg.js"></script>
+    <script src="static/scripts/index.js"></script>
+</head>
+<body>
+<div>
+    <a class="sign_in_button" href="auth/login">Logout</a>
+    <a class="newNoteButton" onclick="newNote({{.token}})">New note</a>
+</div>
+<div class="row">
+    <div class="column">
+        <h1 style="text-align: center">наші</h1>
+        <div class="back">
+            {{range .own}}
+                <div style="text-align: center;">
+                    <a style="color: #000000;text-decoration:none;font-family: Arial, Helvetica, sans-serif;font-size: large;" href="/note/{{.publicId}}">{{.title}}</a>
+                </div>
+                <h5 style="text-align: center;">{{.created}}</h5>
+                <div class="row">
+                    <div style="text-align: center;">
+                            <input type="button" value="Delete!" class="buttonFalse" onclick="del({{.publicId}})" >
+                    </div>
+                </div>
+
+                <br>
+                <hr>
+            {{end}}
+        </div>
+    </div>
+
+    <div class="column">
+        <h1 style="text-align: center">спільні</h1>
+
+        <div class="back">
+
+            {{range .shared}}
+                <div style="text-align: center;">
+                    <a style="color: #000000;text-decoration:none;font-family: Arial, Helvetica, sans-serif;font-size: large;" href="/note/{{.publicId}}">{{.title}}</a>
+                </div>
+                <h5 style="text-align: center;">{{.created}}</h5>
+                <br>
+                <hr>
+            {{end}}
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
+

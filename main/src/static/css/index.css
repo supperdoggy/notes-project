@@ -1,0 +1,151 @@
+body, html {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #000000;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+
+#content {
+    width: 70%;
+}
+
+.sign_in_button {
+	text-decoration: none;
+	outline: none;
+	display: inline-block;
+	width: 140px;
+	height: 45px;
+	line-height: 45px;
+	border-radius: 45px;
+	margin: 10px 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 3px;
+	font-weight: 600;
+	color: #524f4e;
+	  position:absolute;
+	  right:0px;
+	  top:10px;
+	background: white;
+	box-shadow: 0 8px 15px rgba(0,0,0,.1);
+	transition: .3s;
+  }
+  .sign_in_button:hover {
+	background: rgb(255,124,0);
+	box-shadow: linear-gradient(to right, rgb(255,124,0), rgb(249,187,0));
+	color: white;
+	transform: translateY(-7px);
+  }
+
+  .newNoteButton{
+      text-decoration: none;
+      outline: none;
+      display: inline-block;
+      width: 140px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 45px;
+      margin: 10px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 3px;
+      font-weight: 600;
+      color: #524f4e;
+      position:absolute;
+      right:0px;
+      top:90px;
+      background: white;
+      box-shadow: 0 8px 15px rgba(0,0,0,.1);
+      transition: .3s;
+  }
+.newNoteButton:hover {
+    background: rgb(255,124,0);
+    box-shadow: linear-gradient(to right, rgb(255,124,0), rgb(249,187,0));
+    color: white;
+    transform: translateY(-7px);
+}
+
+/* new front-end */
+.back{
+	border-radius: 25px;
+	background: white;
+	padding: 20px;
+	width: 80%;
+	margin-left: 7%;
+  }
+  
+  .column {
+	float: left;
+	width: 33.33%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+.left{
+	float: left;
+	width: 50%;
+}
+.right{
+	float: left;
+	width: 50%;
+
+
+}
+.buttonTrue {
+    background-color: white; 
+    border: 2px solid rgb(192, 240, 62);
+    border-radius: 8px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    width: 100%;
+  }
+
+  .buttonFalse {
+    background-color: white; 
+    border: 2px solid rgb(181, 46, 31);
+    border-radius: 8px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    width: 100%;
+  }
+

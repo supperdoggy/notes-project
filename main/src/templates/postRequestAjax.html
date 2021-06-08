@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            window.alert("Loaded")
+        });
+    </script>
+</head>
+<body>
+
+<div id="response"></div>
+<div id="cookie"></div>
+<form id="ping-form">
+    <input type="text" id="inputForm">
+    <input type="button" id="button">
+    <script type="text/javascript">
+        // Cookies
+        // function createCookie(name, value, days) {
+        //     if (days) {
+        //         let date = new Date();
+        //         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        //         let expires = "; expires=" + date.toGMTString();
+        //     }
+        //     else var expires = "";
+        //
+        //     document.cookie = name + "=" + value + expires + "; path=/";
+        // }
+        //
+        // function readCookie(name) {
+        //     let nameEQ = name + "=";
+        //     let ca = document.cookie.split(';');
+        //     for (var i = 0; i < ca.length; i++) {
+        //         var c = ca[i];
+        //         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        //         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        //     }
+        //     return null;
+        // }
+
+        $("#button").click(function () {
+            $.ajax('http://localhost:8080/api/test', {
+                type: 'POST',  // http method
+                data: { "request": $("#inputForm").val() },// data to submit
+                success: function (data) {
+                    $("#response").html(data.response);
+                    createCookie("t", "1", 999)
+                    $("#cookie").html(readCookie("t"));
+
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                    $('p').append('Error' + errorMessage);
+                }
+            });
+        })
+    </script>
+</form>
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>

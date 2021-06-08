@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script src="/static/scripts/bg.js"></script>
+    <link rel="stylesheet" href="/static/css/bg.css">
+
+</head>
+<body>
+<form action="/auth/register" method="POST">
+    {{if .error}}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{.error}}
+        </div>
+    {{end}}
+    <div style="text-align: center;">
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Register</h1>
+                </div>
+                <div class="login-form">
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="username" name="login">
+                        <label class="login-field-icon fui-user" for="login-name"></label></div>
+                    <div class="control-group">
+                        <input type="password" class="login-field" value="" placeholder="password" name="pass">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label></div>
+                    <input type="submit" value="Register!" class="btn btn-primary btn-large btn-block">
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>

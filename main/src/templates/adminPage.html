@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="/static/scripts/admin.js"></script>
+
+</head>
+<body>
+    {{range .users}}
+    <h2>{{.username}}: {{.password}}: {{.created}}</h2>
+        <button onclick="deleteUser({{.unique_id}})">Delete user!</button>
+    {{end}}
+</body>
+</html>
